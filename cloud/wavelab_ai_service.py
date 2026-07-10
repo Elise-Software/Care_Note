@@ -87,14 +87,14 @@ def parse_json_content(content: str) -> dict[str, Any]:
     return value
 
 
-def gemma_json(messages: list[dict[str, Any]]) -> dict[str, Any]:
+def gemma_json(messages: list[dict[str, Any]], num_predict: int = 160) -> dict[str, Any]:
     payload = {
         "model": MODEL,
         "messages": messages,
         "stream": False,
         "format": "json",
         "think": False,
-        "options": {"temperature": 0.1, "top_p": 0.8, "num_predict": 160},
+        "options": {"temperature": 0.1, "top_p": 0.8, "num_predict": num_predict},
     }
     first = post_ollama(payload)
     content = str(first.get("message", {}).get("content", ""))
@@ -197,7 +197,7 @@ def decode_asset(payload: dict[str, Any], allowed_mimes: set[str], max_bytes: in
 
 def extract_image(payload: dict[str, Any]) -> dict[str, Any]:
     data, mime_type = decode_asset(payload, ALLOWED_IMAGE_MIMES, MAX_IMAGE_BYTES)
-    prompt = """이 이미지는 가상의 병원 방문 후 안내자료 또는 메모다. 이미지에서 실제로 보이는 한글/숫자
+    prompt = """이 이미지는 병원 방문 후 안내자료 또는 의료 문서다. 이미지에서 실제로 보이는 한글/숫자
 텍스트와 명시적 안내만 추출하라. 보이지 않는 의료 정보는 추론하지 말라. 날짜, 시간, 복약,
 재방문, 검사 준비, 주의사항, 질문 관련 문장을 가능한 원문 그대로 보존하라.
 반환 JSON: {"text":"추출된 텍스트", "confidence":0.0, "notes":["판독 시 주의점"]}."""
@@ -209,7 +209,9 @@ def extract_image(payload: dict[str, Any]) -> dict[str, Any]:
             "images": [base64.b64encode(data).decode("ascii")],
         },
     ]
-    result = gemma_json(messages)
+    # Documents can contain multiple lines of source text. A short generation
+    # cap can truncate the JSON string before its closing quote or brace.
+    result = gemma_json(messages, num_predict=1200)
     text = str(result.get("text", "")).strip()
     return {
         "provider": "gemma4-vision",
