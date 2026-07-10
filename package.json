@@ -1,0 +1,22 @@
+{
+  "name": "wavelab-care-checkboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "고령자 가족을 위한 진료 후 돌봄 과제 정리 공유 MVP",
+  "scripts": {
+    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start.ps1",
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1",
+    "lint": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1",
+    "typecheck": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1",
+    "test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test.ps1",
+    "test:e2e": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test-e2e.ps1",
+    "test:browser": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test-browser.ps1",
+    "test:ai": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test-ai.ps1",
+    "evaluate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/evaluate.ps1",
+    "evaluate:ai": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/evaluate-ai.ps1",
+    "fixtures": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-fixtures.ps1",
+    "screenshots": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/screenshots.ps1",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1"
+  },
+  "devDependencies": {}
+}

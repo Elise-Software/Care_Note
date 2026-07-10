@@ -1,0 +1,132 @@
+﻿{
+    "generatedAt":  "2026-07-10T13:50:04.7084375+09:00",
+    "evaluationType":  "deterministic AI schema, grounding, conflict, and fixture contract",
+    "provider":  "mock-contract",
+    "schemaValidityDetectionRate":  1,
+    "groundingDetectionRate":  1,
+    "conflictDetectionRate":  1,
+    "fixtureAvailabilityRate":  1,
+    "imageFixtureCount":  5,
+    "audioFixtureCount":  3,
+    "rows":  [
+                 {
+                     "kind":  "schema",
+                     "id":  "AI01",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "schema",
+                     "id":  "AI02",
+                     "expected":  false,
+                     "actual":  false,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "schema",
+                     "id":  "AI03",
+                     "expected":  false,
+                     "actual":  false,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "grounding",
+                     "id":  "G01",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "grounding",
+                     "id":  "G02",
+                     "expected":  false,
+                     "actual":  false,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "grounding",
+                     "id":  "G03",
+                     "expected":  false,
+                     "actual":  false,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "grounding",
+                     "id":  "G04",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "conflict",
+                     "id":  "C01",
+                     "expected":  "dueDate",
+                     "actual":  "dueDate",
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "conflict",
+                     "id":  "C02",
+                     "expected":  null,
+                     "actual":  null,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "image_fixture",
+                     "id":  "IMG01",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "image_fixture",
+                     "id":  "IMG02",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "image_fixture",
+                     "id":  "IMG03",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "image_fixture",
+                     "id":  "IMG04",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "image_fixture",
+                     "id":  "IMG05",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "audio_fixture",
+                     "id":  "AUD01",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "audio_fixture",
+                     "id":  "AUD02",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 },
+                 {
+                     "kind":  "audio_fixture",
+                     "id":  "AUD03",
+                     "expected":  true,
+                     "actual":  true,
+                     "passed":  true
+                 }
+             ]
+}

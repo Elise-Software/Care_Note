@@ -1,0 +1,229 @@
+[
+  {
+    "id": "S01",
+    "scenarioName": "고혈압 복약 및 재방문",
+    "input": "혈압약은 아침 식후 계속 복용. 7월 28일 오전에 다시 방문. 어지러우면 바로 병원에 연락. 다음에는 약을 줄일 수 있는지 질문.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["혈압약", "아침", "복용"] },
+      { "category": "revisit", "keywords": ["7월 28일", "방문"], "expectedDate": "07-28" },
+      { "category": "precautions", "keywords": ["어지러우면", "연락"] },
+      { "category": "questions", "keywords": ["약", "줄일", "질문"] }
+    ],
+    "notes": "대표 예제"
+  },
+  {
+    "id": "S02",
+    "scenarioName": "당뇨 검사 준비",
+    "input": "당뇨 혈액검사 전날 밤 10시부터 금식. 아침 인슐린은 병원 안내대로 확인 필요. 8월 2일 오전 9시 채혈 예약.",
+    "expectedItems": [
+      { "category": "exam_prep", "keywords": ["혈액검사", "금식"] },
+      { "category": "medication", "keywords": ["인슐린", "확인"] },
+      { "category": "revisit", "keywords": ["8월 2일", "예약"], "expectedDate": "08-02" }
+    ],
+    "notes": "검사 준비와 약 확인 혼합"
+  },
+  {
+    "id": "S03",
+    "scenarioName": "정형외과 통증 관리",
+    "input": "무릎 통증은 무리하지 말고 냉찜질. 진통제는 저녁 식후 복용. 통증이 심해지면 외래에 연락. 2주 후 정형외과 재방문.",
+    "expectedItems": [
+      { "category": "precautions", "keywords": ["무리하지", "냉찜질"] },
+      { "category": "medication", "keywords": ["진통제", "저녁", "복용"] },
+      { "category": "precautions", "keywords": ["통증", "연락"] },
+      { "category": "revisit", "keywords": ["2주 후", "재방문"] }
+    ],
+    "notes": "주의사항 다중"
+  },
+  {
+    "id": "S04",
+    "scenarioName": "내시경 금식",
+    "input": "대장내시경 전날 저녁부터 안내된 장정결제 복용. 검사 당일 오전에는 금식하고 물도 금지. 보호자는 검사 후 운전하지 않도록 확인.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["장정결제", "복용"] },
+      { "category": "exam_prep", "keywords": ["내시경", "금식", "물"] },
+      { "category": "precautions", "keywords": ["운전", "확인"] }
+    ],
+    "notes": "안내문형 입력"
+  },
+  {
+    "id": "S05",
+    "scenarioName": "혈액검사",
+    "input": "다음 혈액검사는 9월 3일 오전 8시. 검사 전날 과음은 피하기. 복용 중인 약 목록을 가져오기.",
+    "expectedItems": [
+      { "category": "revisit", "keywords": ["9월 3일", "오전 8시"], "expectedDate": "09-03" },
+      { "category": "exam_prep", "keywords": ["혈액검사", "약 목록"] },
+      { "category": "precautions", "keywords": ["과음", "피하기"] }
+    ],
+    "notes": "검사 일정"
+  },
+  {
+    "id": "S06",
+    "scenarioName": "만성질환 정기 외래",
+    "input": "현재 처방은 유지. 다음 진료는 10월 12일 오후 외래. 혈압 기록지를 가져오고, 숨찬 증상이 있으면 바로 연락.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["처방", "유지"] },
+      { "category": "revisit", "keywords": ["10월 12일", "외래"], "expectedDate": "10-12" },
+      { "category": "exam_prep", "keywords": ["기록지", "가져오"] },
+      { "category": "precautions", "keywords": ["숨찬", "연락"] }
+    ],
+    "notes": "만성질환 정기"
+  },
+  {
+    "id": "S07",
+    "scenarioName": "약 복용 시간 변경 확인",
+    "input": "위장약은 오늘부터 아침 식전으로 변경. 기존 저녁 약은 계속 복용. 다음 방문 때 졸림이 줄었는지 확인하기.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["위장약", "아침", "변경"] },
+      { "category": "medication", "keywords": ["저녁 약", "계속"] },
+      { "category": "questions", "keywords": ["졸림", "확인"] }
+    ],
+    "notes": "복약 변경 확인"
+  },
+  {
+    "id": "S08",
+    "scenarioName": "재활치료 일정",
+    "input": "재활치료는 매주 화요일과 금요일 오전. 집에서는 계단을 무리하지 않기. 다음 외래에서 보조기 사용 기간을 물어보기.",
+    "expectedItems": [
+      { "category": "revisit", "keywords": ["재활치료", "화요일", "금요일"] },
+      { "category": "precautions", "keywords": ["계단", "무리하지"] },
+      { "category": "questions", "keywords": ["보조기", "물어보기"] }
+    ],
+    "notes": "반복 일정"
+  },
+  {
+    "id": "S09",
+    "scenarioName": "CT 검사 준비",
+    "input": "CT 검사는 8월 20일 13:30 예약. 조영제 검사라서 검사 전 6시간 금식. 알레르기 증상이 있으면 미리 연락.",
+    "expectedItems": [
+      { "category": "revisit", "keywords": ["8월 20일", "예약"], "expectedDate": "08-20" },
+      { "category": "exam_prep", "keywords": ["CT", "조영제", "금식"] },
+      { "category": "precautions", "keywords": ["알레르기", "연락"] }
+    ],
+    "notes": "CT 준비"
+  },
+  {
+    "id": "S10",
+    "scenarioName": "MRI 검사 준비",
+    "input": "MRI 전 금속 물품은 빼고 오기. 폐쇄공포가 있으면 검사 전에 말씀드리기. 다음 주 오전 검사실 방문.",
+    "expectedItems": [
+      { "category": "exam_prep", "keywords": ["MRI", "금속"] },
+      { "category": "precautions", "keywords": ["폐쇄공포", "말씀"] },
+      { "category": "revisit", "keywords": ["다음주", "검사실"] }
+    ],
+    "notes": "상대 날짜"
+  },
+  {
+    "id": "S11",
+    "scenarioName": "수술 후 주의사항",
+    "input": "상처 부위는 이틀간 물 닿지 않게 주의. 항생제는 하루 3회 복용. 발열이나 출혈이 있으면 응급실 연락. 7월 30일 실밥 확인.",
+    "expectedItems": [
+      { "category": "precautions", "keywords": ["상처", "물", "주의"] },
+      { "category": "medication", "keywords": ["항생제", "하루 3회"] },
+      { "category": "precautions", "keywords": ["발열", "출혈", "응급실"] },
+      { "category": "revisit", "keywords": ["7월 30일", "확인"], "expectedDate": "07-30" }
+    ],
+    "notes": "수술 후"
+  },
+  {
+    "id": "S12",
+    "scenarioName": "피부과 재방문",
+    "input": "연고는 아침 저녁 얇게 바르기. 가려움이 심해지면 긁지 말고 연락. 1주 후 피부과 재방문 예정.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["연고", "아침", "저녁"] },
+      { "category": "precautions", "keywords": ["가려움", "긁지", "연락"] },
+      { "category": "revisit", "keywords": ["1주 후", "재방문"] }
+    ],
+    "notes": "피부과"
+  },
+  {
+    "id": "S13",
+    "scenarioName": "안과 검사",
+    "input": "안약은 하루 4회 넣기. 산동 검사 후에는 눈부심이 있을 수 있어 운전 피하기. 다음 진료 때 백내장 수술 필요 여부 질문.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["안약", "하루 4회"] },
+      { "category": "exam_prep", "keywords": ["산동", "검사"] },
+      { "category": "precautions", "keywords": ["눈부심", "운전", "피하기"] },
+      { "category": "questions", "keywords": ["수술", "필요", "질문"] }
+    ],
+    "notes": "안과"
+  },
+  {
+    "id": "S14",
+    "scenarioName": "치과 치료 후 주의사항",
+    "input": "발치 후 오늘은 뜨거운 음식과 음주를 피하기. 진통제는 통증 있을 때 복용. 피가 계속 나면 치과에 연락.",
+    "expectedItems": [
+      { "category": "precautions", "keywords": ["뜨거운 음식", "음주", "피하기"] },
+      { "category": "medication", "keywords": ["진통제", "복용"] },
+      { "category": "precautions", "keywords": ["피", "연락"] }
+    ],
+    "notes": "치과"
+  },
+  {
+    "id": "S15",
+    "scenarioName": "여러 약 복용",
+    "input": "아침에는 혈압약과 위장약 복용. 저녁에는 콜레스테롤약 복용. 약이 겹치는지 다음 외래에서 확인하기.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["아침", "혈압약", "위장약"] },
+      { "category": "medication", "keywords": ["저녁", "콜레스테롤약"] },
+      { "category": "questions", "keywords": ["약", "겹치는지", "확인"] }
+    ],
+    "notes": "복수 약"
+  },
+  {
+    "id": "S16",
+    "scenarioName": "보호자 질문 필요 사례",
+    "input": "최근 기억력이 더 떨어진 느낌이라고 함. 다음 진료 때 보호자가 동행해서 약 부작용 가능성과 추가 검사 필요 여부를 물어보기.",
+    "expectedItems": [
+      { "category": "revisit", "keywords": ["다음 진료", "동행"] },
+      { "category": "questions", "keywords": ["부작용", "추가 검사", "물어보기"] }
+    ],
+    "notes": "질문 중심"
+  },
+  {
+    "id": "S17",
+    "scenarioName": "복수 일정 사례",
+    "input": "7월 25일 오전 채혈, 7월 29일 오후 결과 설명 외래. 채혈 전날 밤 12시부터 금식. 결과 때 약 변경 가능한지 질문.",
+    "expectedItems": [
+      { "category": "revisit", "keywords": ["7월 25일", "채혈"], "expectedDate": "07-25" },
+      { "category": "revisit", "keywords": ["7월 29일", "외래"], "expectedDate": "07-29" },
+      { "category": "exam_prep", "keywords": ["채혈", "금식"] },
+      { "category": "questions", "keywords": ["약 변경", "질문"] }
+    ],
+    "notes": "복수 일정"
+  },
+  {
+    "id": "S18",
+    "scenarioName": "개인정보 유사 패턴 포함 경고",
+    "input": "가상 보호자 연락처 010-1234-5678로 안내문 공유 예정. 이메일 test-care@example.com은 샘플 주소. 약은 점심 식후 복용하고 8월 4일 재방문.",
+    "expectedItems": [
+      { "category": "medication", "keywords": ["약", "점심", "복용"] },
+      { "category": "revisit", "keywords": ["8월 4일", "재방문"], "expectedDate": "08-04" }
+    ],
+    "expectedPrivacyWarnings": ["mobile", "email"],
+    "notes": "명백한 가상 개인정보 패턴"
+  },
+  {
+    "id": "S19",
+    "scenarioName": "다중 범주 혼합 문장",
+    "input": "검사 전날 금식하고 아침 약은 소량의 물과 복용, 검사 후 복통이 심하면 연락, 다음 방문 때 검사 결과를 질문.",
+    "expectedItems": [
+      { "category": "exam_prep", "keywords": ["검사", "금식"] },
+      { "category": "medication", "keywords": ["아침 약", "복용"] },
+      { "category": "precautions", "keywords": ["복통", "연락"] },
+      { "category": "questions", "keywords": ["검사 결과", "질문"] }
+    ],
+    "notes": "한 문장 다중 범주"
+  },
+  {
+    "id": "S20",
+    "scenarioName": "모호한 표현 포함 사례",
+    "input": "컨디션 봐서 무리하지 말기. 약은 평소처럼 먹기. 다음에 수치가 괜찮은지 확인. 예약 날짜는 안내문 다시 확인 필요.",
+    "expectedItems": [
+      { "category": "precautions", "keywords": ["무리하지"] },
+      { "category": "medication", "keywords": ["약", "먹기"] },
+      { "category": "questions", "keywords": ["수치", "확인"] },
+      { "category": "revisit", "keywords": ["예약", "확인"] }
+    ],
+    "notes": "모호한 표현"
+  }
+]

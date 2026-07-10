@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>돌봄노트 | 병원에서 들은 내용을 가족과 함께</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header" id="main">
+      <div class="header-inner">
+        <a class="brand" href="#main" aria-label="돌봄노트 첫 화면">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+          <span><strong>돌봄노트</strong><small>엘리제소프트웨어</small></span>
+        </a>
+        <p class="header-message"><span aria-hidden="true"></span>기록은 필요한 순간에만 안전하게 다뤄져요</p>
+      </div>
+    </header>
+
+    <nav class="service-nav" aria-label="돌봄 기록 메뉴">
+      <div class="service-nav-inner" role="tablist" aria-label="기능 탭">
+        <button type="button" class="main-tab is-active" role="tab" id="tab-write" aria-selected="true" aria-controls="write" data-tab="write">기록하기</button>
+        <button type="button" class="main-tab" role="tab" id="tab-board" aria-selected="false" aria-controls="result" data-tab="board">우리 가족 할 일</button>
+        <button type="button" class="main-tab" role="tab" id="tab-share" aria-selected="false" aria-controls="share" data-tab="share">가족에게 보내기</button>
+        <button type="button" class="main-tab" role="tab" id="tab-evaluation" aria-selected="false" aria-controls="evaluation" data-tab="evaluation">서비스 안내</button>
+      </div>
+    </nav>
+
+    <main class="app-main">
+      <section class="app-panel is-active" id="write" role="tabpanel" aria-labelledby="tab-write" data-panel="write">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">오늘의 진료 기록</p>
+            <h1>병원에서 들은 내용,<br>편하게 남겨 보세요</h1>
+            <p>순서가 뒤섞여도, 문장이 짧아도 괜찮아요. 가족이 함께 챙기기 좋게 정리해 드릴게요.</p>
+          </div>
+          <div class="page-heading-note"><strong>적어 주시면 이렇게 나눠 드려요</strong><span>약 챙기기 · 다시 가는 날 · 검사 준비 · 주의할 점 · 물어볼 것</span></div>
+        </div>
+        <div class="workspace">
+          <div class="editor">
+            <div class="source-tabs" role="tablist" aria-label="입력 방식">
+              <button type="button" class="source-tab is-active" role="tab" aria-selected="true" aria-controls="source-manual" data-source-tab="manual"><span aria-hidden="true">가</span>글로 적기</button>
+              <button type="button" class="source-tab" role="tab" aria-selected="false" aria-controls="source-image" data-source-tab="image"><span aria-hidden="true">▧</span>사진에서 가져오기</button>
+              <button type="button" class="source-tab" role="tab" aria-selected="false" aria-controls="source-audio" data-source-tab="audio"><span aria-hidden="true">◉</span>말로 남기기</button>
+            </div>
+
+            <section class="source-panel is-active" id="source-manual" role="tabpanel" data-source-panel="manual">
+              <label for="memo">기억나는 내용을 적어 주세요</label>
+              <textarea id="memo" rows="7" placeholder="예: 혈압약은 아침밥을 먹은 뒤 계속 복용하고, 7월 28일 오전에 다시 오라고 하셨어요."></textarea>
+              <label for="notice">받아 온 안내문도 함께 넣을 수 있어요 <span class="label-help">선택</span></label>
+              <textarea id="notice" rows="5" placeholder="문자로 받은 안내나 종이에 적힌 내용을 붙여넣어 주세요."></textarea>
+              <div class="file-row">
+                <label for="fileInput">컴퓨터에 저장된 메모 불러오기</label>
+                <input id="fileInput" type="file" accept=".txt,.md,text/plain" />
+              </div>
+              <div class="sample-buttons" id="sampleButtons"></div>
+            </section>
+
+            <section class="source-panel" id="source-image" role="tabpanel" data-source-panel="image" hidden>
+              <div class="panel-intro">
+                <strong>종이 안내문은 사진 한 장이면 돼요</strong>
+                <p>글자가 또렷하게 보이도록 찍어 주세요. 읽어 온 내용은 직접 확인하고 고칠 수 있어요.</p>
+              </div>
+              <label for="imageInput">사진 선택하기</label>
+              <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" />
+              <div id="imagePreview" class="asset-preview empty">선택한 사진이 없습니다.</div>
+              <div class="actions">
+                <button id="extractImageBtn" type="button" class="secondary" disabled>사진 내용 읽어오기</button>
+              </div>
+              <div id="imageReview" class="review-box" hidden>
+                <label for="imageText">읽어 온 내용이 맞는지 확인해 주세요</label>
+                <textarea id="imageText" rows="6" placeholder="사진에서 추출한 텍스트가 여기에 표시됩니다."></textarea>
+                <div class="actions"><button id="useImageTextBtn" type="button" class="secondary">이 내용 함께 정리하기</button></div>
+                <p id="imageStatus" class="status"></p>
+              </div>
+            </section>
+
+            <section class="source-panel" id="source-audio" role="tabpanel" data-source-panel="audio" hidden>
+              <div class="panel-intro">
+                <strong>생각나는 대로 말해도 괜찮아요</strong>
+                <p>최대 30초 동안 녹음할 수 있어요. 글로 바뀐 내용을 확인한 뒤 기록에 더해 주세요.</p>
+              </div>
+              <div class="recording-panel">
+                <div><strong id="recordingState">말할 준비가 되면 시작해 주세요</strong><span id="recordingTimer">00:00</span></div>
+                <div class="actions">
+                  <button id="recordBtn" type="button" class="secondary">녹음 시작</button>
+                  <button id="stopRecordBtn" type="button" class="secondary" disabled>녹음 종료</button>
+                </div>
+              </div>
+              <label for="audioInput">저장해 둔 녹음 불러오기 <span class="label-help">선택</span></label>
+              <input id="audioInput" type="file" accept="audio/webm,audio/ogg,audio/mp4,audio/mpeg,audio/wav" />
+              <audio id="audioPlayback" controls hidden></audio>
+              <div class="actions"><button id="transcribeBtn" type="button" class="secondary" disabled>말한 내용 글로 바꾸기</button></div>
+              <div id="transcriptReview" class="review-box" hidden>
+                <label for="transcriptText">글로 바뀐 내용이 맞는지 확인해 주세요</label>
+                <textarea id="transcriptText" rows="6" placeholder="전사 결과가 여기에 표시됩니다."></textarea>
+                <div class="actions"><button id="useTranscriptBtn" type="button" class="secondary">이 내용 함께 정리하기</button></div>
+                <p id="transcriptStatus" class="status"></p>
+              </div>
+            </section>
+
+            <div class="analysis-bar">
+              <div><strong id="sourceSummary">함께 정리할 기록이 아직 없어요</strong><span id="analysisMode">내용을 입력하면 바로 정리할 수 있어요</span></div>
+              <div class="actions">
+              <button id="analyzeBtn">할 일로 정리하기</button>
+              <button id="clearBtn" class="secondary">모두 지우기</button>
+              </div>
+            </div>
+            <p id="status" class="status" aria-live="polite"></p>
+            <p id="error" class="error" role="alert"></p>
+          </div>
+          <aside class="privacy-panel">
+            <h3>안심하고 기록하세요</h3>
+            <p>전화번호나 주민번호처럼 보이는 내용이 있으면 보내기 전에 한 번 더 알려드릴게요.</p>
+            <div id="privacyWarnings" class="warning-list empty">지금은 가려야 할 정보가 보이지 않아요.</div>
+            <div class="source-list-wrap">
+              <h3>함께 정리할 내용</h3>
+              <div id="sourceList" class="source-list empty">글, 사진, 음성 중 편한 방법으로 기록해 보세요.</div>
+            </div>
+          </aside>
+        </div>
+        <p class="safety"><strong>잠깐만요</strong> 본 서비스는 의료적 진단이나 처방을 대신하지 않아요. 치료나 약에 관한 결정은 의료진과 꼭 상의해 주세요.</p>
+      </section>
+
+      <section class="app-panel" id="result" role="tabpanel" aria-labelledby="tab-board" data-panel="board" hidden>
+        <div class="page-heading compact">
+          <div>
+            <p class="eyebrow">우리 가족 할 일</p>
+            <h1>하나씩 함께 챙겨 볼까요?</h1>
+            <p id="resultSummary">기록을 정리하면 해야 할 일을 보기 좋게 나눠 드려요.</p>
+          </div>
+          <button type="button" class="secondary" data-tab="write">기록 다시 보기</button>
+        </div>
+        <div id="conflictBox" class="conflict-box" hidden></div>
+        <div id="checkboard" class="checkboard"></div>
+      </section>
+
+      <section class="app-panel" id="share" role="tabpanel" aria-labelledby="tab-share" data-panel="share" hidden>
+        <div class="page-heading compact">
+          <div>
+            <p class="eyebrow">가족에게 보내기</p>
+            <h1>필요한 내용만 간단히 전하세요</h1>
+            <p>카카오톡이나 문자에 바로 붙여넣을 수 있게 준비해 두었어요.</p>
+          </div>
+        </div>
+        <div class="share-grid">
+          <label class="toggle"><input type="checkbox" id="includeCompleted" checked /> 이미 챙긴 일도 함께 보여주기</label>
+          <textarea id="shareText" rows="16" readonly></textarea>
+          <div class="actions">
+            <button id="copyBtn">내용 복사하기</button>
+            <button id="downloadBtn" class="secondary">파일로 저장하기</button>
+          </div>
+          <p id="shareStatus" class="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="app-panel" id="evaluation" role="tabpanel" aria-labelledby="tab-evaluation" data-panel="evaluation" hidden>
+        <div class="page-heading compact">
+          <div>
+            <p class="eyebrow">신뢰와 안전</p>
+            <h1>이렇게 꼼꼼히 확인하고 있어요</h1>
+            <p>실제 개인정보가 아닌 가상 사례로 정리 결과와 안전장치를 꾸준히 점검합니다.</p>
+          </div>
+        </div>
+        <div id="evalDashboard" class="eval-dashboard">확인 결과를 불러오고 있어요.</div>
+      </section>
+    </main>
+
+    <script src="../src/engine.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

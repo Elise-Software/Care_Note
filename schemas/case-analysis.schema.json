@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WaveLab CaseAnalysis",
+  "type": "object",
+  "required": ["summary", "actionItems", "ambiguities", "safetyFlags"],
+  "properties": {
+    "summary": { "type": "string", "maxLength": 300 },
+    "actionItems": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "required": ["category", "title", "detail", "dueDate", "dueTime", "priority", "confidence", "sourceText", "sourceDocumentId"],
+        "properties": {
+          "category": { "enum": ["medication", "revisit", "exam_prep", "precautions", "questions"] },
+          "title": { "type": "string", "maxLength": 100 },
+          "detail": { "type": "string", "maxLength": 500 },
+          "dueDate": { "type": ["string", "null"] },
+          "dueTime": { "type": ["string", "null"] },
+          "priority": { "enum": ["low", "medium", "high"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "sourceText": { "type": "string", "minLength": 1 },
+          "sourceDocumentId": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "ambiguities": { "type": "array" },
+    "safetyFlags": { "type": "array" }
+  }
+}

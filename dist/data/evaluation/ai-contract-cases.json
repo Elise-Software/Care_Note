@@ -1,0 +1,23 @@
+[
+  {
+    "id": "AI01",
+    "name": "원문 근거가 있는 유효 구조",
+    "sourceText": "혈압약은 아침 식후 복용.",
+    "draft": {"summary":"복약 확인","actionItems":[{"category":"medication","title":"혈압약 복용","detail":"혈압약은 아침 식후 복용.","dueDate":"","dueTime":"","priority":"low","confidence":0.8,"sourceText":"혈압약은 아침 식후 복용.","sourceDocumentId":"manual-1"}],"ambiguities":[],"safetyFlags":[]},
+    "expectedValid": true
+  },
+  {
+    "id": "AI02",
+    "name": "actionItems 배열 누락",
+    "sourceText": "7월 28일 방문.",
+    "draft": {"summary":"일정","actionItems":"invalid","ambiguities":[],"safetyFlags":[]},
+    "expectedValid": false
+  },
+  {
+    "id": "AI03",
+    "name": "허용되지 않는 범주",
+    "sourceText": "검사 전 금식.",
+    "draft": {"summary":"검사","actionItems":[{"category":"diagnosis","title":"진단","detail":"검사 전 금식.","dueDate":"","dueTime":"","priority":"low","confidence":0.8,"sourceText":"검사 전 금식.","sourceDocumentId":"manual-1"}],"ambiguities":[],"safetyFlags":[]},
+    "expectedValid": false
+  }
+]

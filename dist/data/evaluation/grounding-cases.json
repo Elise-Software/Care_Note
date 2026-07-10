@@ -1,0 +1,6 @@
+[
+  {"id":"G01","sourceText":"혈압약은 아침 식후 복용.","candidate":"혈압약은 아침 식후 복용.","expectedGrounded":true},
+  {"id":"G02","sourceText":"혈압약은 아침 식후 복용.","candidate":"새로운 항생제를 하루 세 번 복용.","expectedGrounded":false},
+  {"id":"G03","sourceText":"7월 28일 오전 다시 방문.","candidate":"7월 29일 오후 다시 방문.","expectedGrounded":false},
+  {"id":"G04","sourceText":"검사 전날 밤 10시부터 금식.","candidate":"검사 전날 밤 10시부터 금식.","expectedGrounded":true}
+]

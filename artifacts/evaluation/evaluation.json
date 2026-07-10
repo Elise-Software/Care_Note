@@ -1,0 +1,241 @@
+﻿{
+    "generatedAt":  "2026-07-10T13:50:04.2084375+09:00",
+    "sampleCount":  20,
+    "totalExpectedItems":  66,
+    "correctlyMatchedItems":  63,
+    "overallStructureRate":  0.9545,
+    "overallStructureRatePercent":  95.45,
+    "sampleLevelSuccessRate":  0.85,
+    "sampleLevelSuccessRatePercent":  85,
+    "privacyWarningDetectionRate":  1,
+    "privacyWarningDetectionRatePercent":  100,
+    "categoryMetrics":  {
+                            "medication":  {
+                                               "label":  "복약 확인",
+                                               "truePositive":  16,
+                                               "falsePositive":  5,
+                                               "falseNegative":  0,
+                                               "precision":  0.7619,
+                                               "recall":  1,
+                                               "f1":  0.8649
+                                           },
+                            "revisit":  {
+                                            "label":  "재방문 일정",
+                                            "truePositive":  12,
+                                            "falsePositive":  4,
+                                            "falseNegative":  3,
+                                            "precision":  0.75,
+                                            "recall":  0.8,
+                                            "f1":  0.7742
+                                        },
+                            "exam_prep":  {
+                                              "label":  "검사 준비",
+                                              "truePositive":  9,
+                                              "falsePositive":  12,
+                                              "falseNegative":  0,
+                                              "precision":  0.4286,
+                                              "recall":  1,
+                                              "f1":  0.6
+                                          },
+                            "precautions":  {
+                                                "label":  "주의사항",
+                                                "truePositive":  17,
+                                                "falsePositive":  2,
+                                                "falseNegative":  0,
+                                                "precision":  0.8947,
+                                                "recall":  1,
+                                                "f1":  0.9444
+                                            },
+                            "questions":  {
+                                              "label":  "다음 방문 질문",
+                                              "truePositive":  9,
+                                              "falsePositive":  4,
+                                              "falseNegative":  0,
+                                              "precision":  0.6923,
+                                              "recall":  1,
+                                              "f1":  0.8182
+                                          }
+                        },
+    "sampleResults":  [
+                          {
+                              "id":  "S01",
+                              "scenarioName":  "고혈압 복약 및 재방문",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S02",
+                              "scenarioName":  "당뇨 검사 준비",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S03",
+                              "scenarioName":  "정형외과 통증 관리",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S04",
+                              "scenarioName":  "내시경 금식",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  6,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S05",
+                              "scenarioName":  "혈액검사",
+                              "expected":  3,
+                              "correct":  2,
+                              "structureRate":  66.67,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S06",
+                              "scenarioName":  "만성질환 정기 외래",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S07",
+                              "scenarioName":  "약 복용 시간 변경 확인",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  3,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S08",
+                              "scenarioName":  "재활치료 일정",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S09",
+                              "scenarioName":  "CT 검사 준비",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S10",
+                              "scenarioName":  "MRI 검사 준비",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S11",
+                              "scenarioName":  "수술 후 주의사항",
+                              "expected":  4,
+                              "correct":  3,
+                              "structureRate":  75,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S12",
+                              "scenarioName":  "피부과 재방문",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  3,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S13",
+                              "scenarioName":  "안과 검사",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S14",
+                              "scenarioName":  "치과 치료 후 주의사항",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S15",
+                              "scenarioName":  "여러 약 복용",
+                              "expected":  3,
+                              "correct":  3,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S16",
+                              "scenarioName":  "보호자 질문 필요 사례",
+                              "expected":  2,
+                              "correct":  2,
+                              "structureRate":  100,
+                              "detectedItems":  4,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S17",
+                              "scenarioName":  "복수 일정 사례",
+                              "expected":  4,
+                              "correct":  3,
+                              "structureRate":  75,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S18",
+                              "scenarioName":  "개인정보 유사 패턴 포함 경고",
+                              "expected":  2,
+                              "correct":  2,
+                              "structureRate":  100,
+                              "detectedItems":  3,
+                              "privacyWarnings":  2
+                          },
+                          {
+                              "id":  "S19",
+                              "scenarioName":  "다중 범주 혼합 문장",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  6,
+                              "privacyWarnings":  0
+                          },
+                          {
+                              "id":  "S20",
+                              "scenarioName":  "모호한 표현 포함 사례",
+                              "expected":  4,
+                              "correct":  4,
+                              "structureRate":  100,
+                              "detectedItems":  5,
+                              "privacyWarnings":  0
+                          }
+                      ]
+}

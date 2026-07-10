@@ -1,0 +1,18 @@
+[
+  {
+    "id": "C01",
+    "sources": [
+      {"id":"manual-1","type":"manual","text":"7월 28일 오전에 다시 방문."},
+      {"id":"vision-1","type":"vision","text":"예약 날짜는 7월 29일 오전입니다."}
+    ],
+    "expectedConflict": "dueDate"
+  },
+  {
+    "id": "C02",
+    "sources": [
+      {"id":"manual-1","type":"manual","text":"혈압약은 아침 식후 복용."},
+      {"id":"audio-1","type":"audio_transcript","text":"혈압약은 아침 식후 복용."}
+    ],
+    "expectedConflict": null
+  }
+]

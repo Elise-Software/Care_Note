@@ -1,0 +1,27 @@
+[
+  {
+    "id": "AUD01",
+    "file": "AUD01_medication_revisit.wav",
+    "synthetic": true,
+    "mimeType": "audio/wav",
+    "referenceTranscript": "혈압약은 아침 식후 계속 복용하고 7월 28일 오전에 다시 방문합니다.",
+    "expectedCategories": ["medication", "revisit"]
+  },
+  {
+    "id": "AUD02",
+    "file": "AUD02_exam_prep.wav",
+    "synthetic": true,
+    "mimeType": "audio/wav",
+    "referenceTranscript": "검사 전날 밤 10시부터 금식하고 물도 마시지 않습니다.",
+    "expectedCategories": ["exam_prep"]
+  },
+  {
+    "id": "AUD03",
+    "file": "AUD03_privacy_question.wav",
+    "synthetic": true,
+    "mimeType": "audio/wav",
+    "referenceTranscript": "가상 연락처 010-0000-0000으로 공유하고 다음 방문 때 약 확인을 질문합니다.",
+    "expectedCategories": ["questions"],
+    "expectedPrivacyWarnings": ["mobile"]
+  }
+]

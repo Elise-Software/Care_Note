@@ -1,0 +1,42 @@
+[
+  {
+    "id": "IMG01",
+    "file": "IMG01_blood_test_notice.png",
+    "synthetic": true,
+    "mimeType": "image/png",
+    "extractedText": "8월 2일 오전 9시 채혈 예약. 검사 전날 밤 10시부터 금식. 아침 인슐린은 안내에 따라 확인.",
+    "expectedCategories": ["revisit", "exam_prep", "medication"]
+  },
+  {
+    "id": "IMG02",
+    "file": "IMG02_ct_notice.png",
+    "synthetic": true,
+    "mimeType": "image/png",
+    "extractedText": "8월 20일 13:30 CT 검사. 검사 전 6시간 금식. 알레르기 증상이 있으면 미리 연락.",
+    "expectedCategories": ["revisit", "exam_prep", "precautions"]
+  },
+  {
+    "id": "IMG03",
+    "file": "IMG03_mri_notice.png",
+    "synthetic": true,
+    "mimeType": "image/png",
+    "extractedText": "MRI 전 금속 물품은 빼고 오기. 폐쇄공포가 있으면 검사 전에 알리기. 다음 주 오전 검사실 방문.",
+    "expectedCategories": ["exam_prep", "precautions", "revisit"]
+  },
+  {
+    "id": "IMG04",
+    "file": "IMG04_privacy_notice.png",
+    "synthetic": true,
+    "mimeType": "image/png",
+    "extractedText": "가상 연락처 010-0000-0000. 가상 이메일 demo@example.test. 8월 4일 재방문 예정.",
+    "expectedPrivacyWarnings": ["mobile", "email"]
+  },
+  {
+    "id": "IMG05",
+    "file": "IMG05_conflicting_revisit_notice.png",
+    "synthetic": true,
+    "mimeType": "image/png",
+    "extractedText": "예약 날짜는 7월 29일 오전. 기존 메모의 7월 28일 일정과 다를 수 있음. 방문 전 날짜를 다시 확인.",
+    "expectedCategories": ["revisit"]
+  }
+]
